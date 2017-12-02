@@ -1,19 +1,15 @@
 var age = document.getElementsByClassName('age');
 var sort = document.querySelector('.sort');
+var ageArr = [];
 
+for (var i = 0; i < age.length; i++) {
+    ageArr[i] = age[i].innerHTML;
+}
 
+ageArr.sort();
 
 sort.onclick = function() {
-
-
-    for (var i = 0; i < age.length; i++) {
-        for (var j = 0; j < age.length - 1; j++) {
-            if (age[j].innerHTML > age[j + 1].innerHTML) {
-                var k = age[j].innerHTML;
-                age[j].innerHTML = age[j + 1].innerHTML;
-                age[j + 1].innerHTML = k;
-            }
-
-        }
-    }
+for (var j = 0; j < ageArr.length; j++) {
+    age[j].innerHTML = ageArr[j];
+}
 }
