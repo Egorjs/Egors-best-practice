@@ -1,15 +1,23 @@
 var age = document.getElementsByClassName('age');
-var sort = document.querySelector('.sort');
-var ageArr = [];
+// var sort = document.querySelector('.sort');
+// var ageArr = [];
 
-for (var i = 0; i < age.length; i++) {
-    ageArr[i] = age[i].innerHTML;
-}
+age = Array.prototype.slice.call(age);
 
-ageArr.sort();
+age.sort(function(a, b){
+    return a.innerHTML.localeCompare(b.innerHTML);
+});
 
-sort.onclick = function() {
-for (var j = 0; j < ageArr.length; j++) {
-    age[j].innerHTML = ageArr[j];
-}
-}
+console.log(age);
+
+// for (var i = 0; i < age.length; i++) {
+//     ageArr[i] = age[i].innerHTML;
+// }
+//
+// ageArr.sort();
+//
+// sort.onclick = function() {
+// for (var j = 0; j < ageArr.length; j++) {
+//     age[j].innerHTML = ageArr[j];
+// }
+// }
