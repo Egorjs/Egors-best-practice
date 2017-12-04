@@ -5,6 +5,7 @@ var age = document.getElementsByClassName('age');
 age = Array.prototype.slice.call(age);
 
 age.sort(function(a, b){
+    //why do you use localeCompare? a.innerHTML itself is a number. Please use native comparator for numbers instead.
     return a.innerHTML.localeCompare(b.innerHTML);
 });
 
